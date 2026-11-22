@@ -2,7 +2,7 @@
 
 每日抓取 AI 新闻，并生成一份 Markdown 摘要。
 
-这是一个面向 Python 零基础学习者的开源练习项目：先用公开 RSS 源把「今天有哪些 AI 新闻」自动整理出来，后续会逐步加上数据库、FastAPI 接口、大模型摘要、RAG 问答和内容生成 Agent，作为 AI 应用开发的作品集。完整计划见 [ROADMAP.md](ROADMAP.md)。
+这是一个面向 Python 零基础学习者的开源练习项目：先用公开 RSS 源把「今天有哪些 AI 新闻」自动整理出来，后续会逐步加上数据库、FastAPI 接口、大模型摘要、吸睛选题、RAG 问答、内容生成 Agent 和自动封面图，作为 AI 应用开发的作品集。完整计划见 [ROADMAP.md](ROADMAP.md)。
 
 作者：[CooraRl](https://github.com/CooraRl) · X：[@XxCoora](https://x.com/XxCoora)
 
@@ -85,11 +85,12 @@ daily-ai-news/
 2. **V0.2**：更多新闻源、更好的去重，用 GitHub Actions 每天自动运行
 3. **V0.3**：用 SQLite / MySQL 保存历史新闻
 4. **V0.4（FastAPI 阶段）**：提供 HTTP 接口，例如 `GET /news/today`
-5. **V0.5（大模型阶段）**：生成中文摘要和分类，产出每日简报
+5. **V0.5（大模型阶段）**：生成中文摘要、分类、吸睛度 / 焦虑感评分和标题钩子
 6. **V0.6**：基于历史新闻库的 RAG 问答
-7. **V0.7（Agent 阶段）**：自动选题，生成 X 帖子和抖音脚本草稿
-8. **V0.8**：网页前端
-9. **V1.0**：Docker 部署、完善文档和演示
+7. **V0.7（Agent 阶段）**：自动抓取吸睛、带 AI 焦虑感的选题，结合 X 热门趋势，生成帖子和脚本草稿
+8. **V0.8**：自动生成吸睛封面图（提示词 → 图像 API → Pillow 叠字，导出抖音 9:16 和 X 16:9）
+9. **V0.9**：网页前端
+10. **V1.0**：Docker 部署、完善文档和演示
 
 具体任务已拆成适合初学者逐个完成的 [Issues](https://github.com/CooraRl/daily-ai-news/issues)。建议从标有 `good first issue` 的「跑通项目并精读 main.py」开始。欢迎提 Issue 或 Pull Request。
 
