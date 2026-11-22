@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# 虚拟环境
+.venv/
+venv/
+env/
+
+# 环境变量（本项目不需要密钥，但养成习惯不要提交）
+.env
+.env.*
+
+# 脚本生成的新闻摘要
+output/
+
+# 编辑器与系统文件
+.idea/
+.vscode/
+.DS_Store
