@@ -2,7 +2,7 @@
 
 每日抓取 AI 新闻，并生成一份 Markdown 摘要。
 
-这是一个面向 Python 零基础学习者的开源练习项目：先用公开 RSS 源把「今天有哪些 AI 新闻」自动整理出来，后续会逐步加上 FastAPI 接口和大模型摘要 Agent，作为 AI 应用开发的作品集。
+这是一个面向 Python 零基础学习者的开源练习项目：先用公开 RSS 源把「今天有哪些 AI 新闻」自动整理出来，后续会逐步加上数据库、FastAPI 接口、大模型摘要、RAG 问答和内容生成 Agent，作为 AI 应用开发的作品集。完整计划见 [ROADMAP.md](ROADMAP.md)。
 
 作者：[CooraRl](https://github.com/CooraRl) · X：[@XxCoora](https://x.com/XxCoora)
 
@@ -63,7 +63,8 @@ daily-ai-news/
 ├── requirements.txt   # Python 依赖
 ├── LICENSE            # MIT 开源许可证
 ├── README.md          # 项目说明
-├── .gitignore         # 忽略虚拟环境、缓存和生成结果
+├── ROADMAP.md         # 分阶段路线图与验收标准
+├── .gitignore         # 忽略虚拟环境、缓存、密钥文件和生成结果
 └── output/            # 运行后生成的每日 Markdown（本地目录）
 ```
 
@@ -76,13 +77,23 @@ daily-ai-news/
 
 ## 路线图
 
-这个仓库会跟着学习路线一起升级：
+完整的分阶段计划（每个版本要学的技术、验收标准，以及对应的学习任务）见 **[ROADMAP.md](ROADMAP.md)**。
 
-1. **现在（Python 阶段）**：命令行脚本，抓取公开 RSS，输出标题和链接
-2. **下一步（FastAPI 阶段）**：提供 HTTP 接口，例如 `GET /news/today`，用浏览器或接口工具查看当天新闻
-3. **再下一步（大模型 / Agent 阶段）**：接入大模型，把标题列表扩写成中文摘要，做成「每日 AI 新闻摘要 Agent」
+简要预览：
 
-欢迎提 Issue 或 Pull Request。
+1. **V0.1（当前，Python 阶段）**：命令行脚本，抓取公开 RSS，输出标题和链接
+2. **V0.2**：更多新闻源、更好的去重，用 GitHub Actions 每天自动运行
+3. **V0.3**：用 SQLite / MySQL 保存历史新闻
+4. **V0.4（FastAPI 阶段）**：提供 HTTP 接口，例如 `GET /news/today`
+5. **V0.5（大模型阶段）**：生成中文摘要和分类，产出每日简报
+6. **V0.6**：基于历史新闻库的 RAG 问答
+7. **V0.7（Agent 阶段）**：自动选题，生成 X 帖子和抖音脚本草稿
+8. **V0.8**：网页前端
+9. **V1.0**：Docker 部署、完善文档和演示
+
+具体任务已拆成适合初学者逐个完成的 [Issues](https://github.com/CooraRl/daily-ai-news/issues)。建议从标有 `good first issue` 的「跑通项目并精读 main.py」开始。欢迎提 Issue 或 Pull Request。
+
+请不要把 API 密钥或密码提交到仓库。需要密钥的功能一律使用环境变量或本地 `.env`（该文件已被忽略）。
 
 ## 许可证
 
